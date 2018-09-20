@@ -14,7 +14,7 @@ func (obj *Group) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *Group) Remove(m Object3D) {
+func (obj *Group) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 

@@ -14,7 +14,7 @@ func (obj *Line) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *Line) Remove(m Object3D) {
+func (obj *Line) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 

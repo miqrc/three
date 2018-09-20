@@ -14,7 +14,7 @@ func (obj *Mesh) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *Mesh) Remove(m Object3D) {
+func (obj *Mesh) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 

@@ -14,7 +14,7 @@ func (obj *DirectionalLight) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *DirectionalLight) Remove(m Object3D) {
+func (obj *DirectionalLight) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 

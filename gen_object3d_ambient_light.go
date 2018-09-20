@@ -14,7 +14,7 @@ func (obj *AmbientLight) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *AmbientLight) Remove(m Object3D) {
+func (obj *AmbientLight) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 

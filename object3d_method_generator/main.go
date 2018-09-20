@@ -27,7 +27,7 @@ func (obj *{{ .TypeName }}) Add(m Object3D) {
 	obj.Object.Call("add", m)
 }
 
-func (obj *{{ .TypeName }}) Remove(m Object3D) {
+func (obj *{{ .TypeName }}) Remove(m *js.Object) {
 	obj.Object.Call("remove", m)
 }
 
