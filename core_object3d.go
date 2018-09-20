@@ -5,8 +5,9 @@ import "github.com/gopherjs/gopherjs/js"
 type Object3D interface {
 	ApplyMatrix(matrix *Matrix4)
 	Add(Object3D)
-	Remove(*js.Object)
+	Remove(Object3D)
 	ToJSON() interface{}
+	GetObjectById(id int) *js.Object
 	// Copy(source Object3D, recursive bool)
 
 	getInternalObject() *js.Object

@@ -10,9 +10,10 @@ import (
 type Group struct {
 	*js.Object
 
-	Position *Vector3     `js:"position"`
-	Rotation *Euler       `js:"rotation"`
-	Children []*js.Object `js:"children"`
+	ID       int        `js:"id"`
+	Position *Vector3   `js:"position"`
+	Rotation *Euler     `js:"rotation"`
+	Children []Object3D `js:"children"`
 }
 
 func NewGroup() *Group {
