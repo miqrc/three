@@ -27,6 +27,11 @@ func (obj *{{ .TypeName }}) Add(m Object3D) {
 	obj.Object.Call("add", m.getInternalObject())
 }
 
+func (obj *{{ .TypeName }}) Remove(m *js.Object) {
+	//obj.Object.Call("remove", m.getInternalObject())
+	obj.Object.Call("remove", m)
+}
+
 // func (obj *{{ .TypeName }}) Copy() *{{ .TypeName }} {
 // 	return &{{ .TypeName }}{Object: obj.getInternalObject().Call("copy")}
 // }
