@@ -14,6 +14,11 @@ func (obj *Fog) Add(m Object3D) {
 	obj.Object.Call("add", m.getInternalObject())
 }
 
+func (obj *Fog) Remove(m *js.Object) {
+	//obj.Object.Call("remove", m.getInternalObject())
+	obj.Object.Call("remove", m)
+}
+
 // func (obj *Fog) Copy() *Fog {
 // 	return &Fog{Object: obj.getInternalObject().Call("copy")}
 // }

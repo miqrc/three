@@ -14,6 +14,11 @@ func (obj *DirectionalLight) Add(m Object3D) {
 	obj.Object.Call("add", m.getInternalObject())
 }
 
+func (obj *DirectionalLight) Remove(m *js.Object) {
+	//obj.Object.Call("remove", m.getInternalObject())
+	obj.Object.Call("remove", m)
+}
+
 // func (obj *DirectionalLight) Copy() *DirectionalLight {
 // 	return &DirectionalLight{Object: obj.getInternalObject().Call("copy")}
 // }

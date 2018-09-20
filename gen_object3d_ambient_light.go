@@ -14,6 +14,11 @@ func (obj *AmbientLight) Add(m Object3D) {
 	obj.Object.Call("add", m.getInternalObject())
 }
 
+func (obj *AmbientLight) Remove(m *js.Object) {
+	//obj.Object.Call("remove", m.getInternalObject())
+	obj.Object.Call("remove", m)
+}
+
 // func (obj *AmbientLight) Copy() *AmbientLight {
 // 	return &AmbientLight{Object: obj.getInternalObject().Call("copy")}
 // }
