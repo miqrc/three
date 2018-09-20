@@ -5,18 +5,21 @@ package three
 // object3d_method_generator -typeName DirectionalLight -typeSlug directional_light
 
 import "github.com/gopherjs/gopherjs/js"
-	
+
 func (obj *DirectionalLight) ApplyMatrix(matrix *Matrix4) {
 	obj.Call("applyMatrix", matrix)
 }
 
 func (obj *DirectionalLight) Add(m Object3D) {
-	obj.Object.Call("add", m.getInternalObject())
+	obj.Object.Call("add", m)
 }
 
-func (obj *DirectionalLight) Remove(m *js.Object) {
-	//obj.Object.Call("remove", m.getInternalObject())
+func (obj *DirectionalLight) Remove(m Object3D) {
 	obj.Object.Call("remove", m)
+}
+
+func (obj *DirectionalLight) GetObjectById(id int) *js.Object {
+	return obj.Call("getObjectById", id)
 }
 
 // func (obj *DirectionalLight) Copy() *DirectionalLight {

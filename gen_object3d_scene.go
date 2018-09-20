@@ -5,18 +5,21 @@ package three
 // object3d_method_generator -typeName Scene -typeSlug scene
 
 import "github.com/gopherjs/gopherjs/js"
-	
+
 func (obj *Scene) ApplyMatrix(matrix *Matrix4) {
 	obj.Call("applyMatrix", matrix)
 }
 
 func (obj *Scene) Add(m Object3D) {
-	obj.Object.Call("add", m.getInternalObject())
+	obj.Object.Call("add", m)
 }
 
-func (obj *Scene) Remove(m *js.Object) {
-	//obj.Object.Call("remove", m.getInternalObject())
+func (obj *Scene) Remove(m Object3D) {
 	obj.Object.Call("remove", m)
+}
+
+func (obj *Scene) GetObjectById(id int) *js.Object {
+	return obj.Call("getObjectById", id)
 }
 
 // func (obj *Scene) Copy() *Scene {

@@ -5,18 +5,21 @@ package three
 // object3d_method_generator -typeName AmbientLight -typeSlug ambient_light
 
 import "github.com/gopherjs/gopherjs/js"
-	
+
 func (obj *AmbientLight) ApplyMatrix(matrix *Matrix4) {
 	obj.Call("applyMatrix", matrix)
 }
 
 func (obj *AmbientLight) Add(m Object3D) {
-	obj.Object.Call("add", m.getInternalObject())
+	obj.Object.Call("add", m)
 }
 
-func (obj *AmbientLight) Remove(m *js.Object) {
-	//obj.Object.Call("remove", m.getInternalObject())
+func (obj *AmbientLight) Remove(m Object3D) {
 	obj.Object.Call("remove", m)
+}
+
+func (obj *AmbientLight) GetObjectById(id int) *js.Object {
+	return obj.Call("getObjectById", id)
 }
 
 // func (obj *AmbientLight) Copy() *AmbientLight {

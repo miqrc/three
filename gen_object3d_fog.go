@@ -5,18 +5,21 @@ package three
 // object3d_method_generator -typeName Fog -typeSlug fog
 
 import "github.com/gopherjs/gopherjs/js"
-	
+
 func (obj *Fog) ApplyMatrix(matrix *Matrix4) {
 	obj.Call("applyMatrix", matrix)
 }
 
 func (obj *Fog) Add(m Object3D) {
-	obj.Object.Call("add", m.getInternalObject())
+	obj.Object.Call("add", m)
 }
 
-func (obj *Fog) Remove(m *js.Object) {
-	//obj.Object.Call("remove", m.getInternalObject())
+func (obj *Fog) Remove(m Object3D) {
 	obj.Object.Call("remove", m)
+}
+
+func (obj *Fog) GetObjectById(id int) *js.Object {
+	return obj.Call("getObjectById", id)
 }
 
 // func (obj *Fog) Copy() *Fog {
