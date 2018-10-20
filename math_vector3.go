@@ -5,6 +5,9 @@ import "github.com/gopherjs/gopherjs/js"
 // Vector3 - represents a Vector3.
 type Vector3 struct {
 	*js.Object
+	X float64 `js:"X"`
+	Y float64 `js:"Y"`
+	Z float64 `js:"Z"`
 }
 
 func NewVector3(x, y, z float64) Vector3 {
