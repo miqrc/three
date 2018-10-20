@@ -34,3 +34,7 @@ func (obj *DirectionalLight) getInternalObject() *js.Object {
 	return obj.Object
 }
 
+func (obj *DirectionalLight) UpdateMatrix() {
+	obj.Call("updateMatrix")
+}
+

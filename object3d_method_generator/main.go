@@ -47,6 +47,10 @@ func (obj *{{ .TypeName }}) getInternalObject() *js.Object {
 	return obj.Object
 }
 
+func (obj *{{ .TypeName }}) UpdateMatrix() {
+	obj.Call("updateMatrix")
+}
+
 `
 
 var (

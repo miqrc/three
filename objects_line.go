@@ -10,11 +10,12 @@ import (
 type Line struct {
 	*js.Object
 
-	ID       int             `js:"id"`
-	Position *Vector3        `js:"position"`
-	Rotation *Euler          `js:"rotation"`
-	Geometry *BufferGeometry `js:"geometry"`
-	Material Material        `js:"material"`
+	ID               int             `js:"id"`
+	Position         *Vector3        `js:"position"`
+	Rotation         *Euler          `js:"rotation"`
+	Geometry         *BufferGeometry `js:"geometry"`
+	Material         Material        `js:"material"`
+	MatrixAutoUpdate bool            `js:"matrixAutoUpdate"`
 }
 
 // NewLine creates a new material. If Material is nil, three.js will assign a randomized material to the line o_O.

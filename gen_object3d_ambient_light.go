@@ -34,3 +34,7 @@ func (obj *AmbientLight) getInternalObject() *js.Object {
 	return obj.Object
 }
 
+func (obj *AmbientLight) UpdateMatrix() {
+	obj.Call("updateMatrix")
+}
+

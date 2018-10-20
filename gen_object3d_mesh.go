@@ -34,3 +34,7 @@ func (obj *Mesh) getInternalObject() *js.Object {
 	return obj.Object
 }
 
+func (obj *Mesh) UpdateMatrix() {
+	obj.Call("updateMatrix")
+}
+

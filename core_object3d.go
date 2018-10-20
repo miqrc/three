@@ -9,6 +9,7 @@ type Object3D interface {
 	ToJSON() interface{}
 	GetObjectById(id int) *js.Object
 	// Copy(source Object3D, recursive bool)
+	UpdateMatrix()
 
 	getInternalObject() *js.Object
 }
@@ -43,7 +44,6 @@ type Object3D interface {
 // GetWorldScale()
 // GetWorldDirection()
 // Raycast()
-// UpdateMatrix()
 // UpdateMatrixWorld(force bool)
 // ToJSON(meta interface{})
 // Clone(recursive bool)

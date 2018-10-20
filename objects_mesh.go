@@ -9,11 +9,12 @@ import (
 type Mesh struct {
 	*js.Object
 
-	ID       int      `js:"id"`
-	Position *Vector3 `js:"position"`
-	Rotation *Euler   `js:"rotation"`
-	Geometry Geometry `js:"geometry"`
-	Material Material `js:"material"`
+	ID               int      `js:"id"`
+	Position         *Vector3 `js:"position"`
+	Rotation         *Euler   `js:"rotation"`
+	Geometry         Geometry `js:"geometry"`
+	Material         Material `js:"material"`
+	MatrixAutoUpdate bool     `js:"matrixAutoUpdate"`
 }
 
 func NewMesh(geometry Geometry, material Material) *Mesh {

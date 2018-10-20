@@ -34,3 +34,7 @@ func (obj *Scene) getInternalObject() *js.Object {
 	return obj.Object
 }
 
+func (obj *Scene) UpdateMatrix() {
+	obj.Call("updateMatrix")
+}
+
