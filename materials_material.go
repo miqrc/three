@@ -26,9 +26,11 @@ const (
 type MaterialParameters struct {
 	*js.Object
 
-	Color   *Color  `js:"color"`
-	Shading Shading `js:"shading"`
-	Side    Side    `js:"side"`
+	Color       *Color  `js:"color"`
+	Shading     Shading `js:"shading"`
+	Side        Side    `js:"side"`
+	Transparent bool    `js:"transparent"`
+	Opacity     float64 `js:"opacity"`
 }
 
 func NewMaterialParameters() *MaterialParameters {

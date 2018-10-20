@@ -12,6 +12,6 @@ type MeshPhongMaterial struct {
 
 func NewMeshPhongMaterial(params *MaterialParameters) *MeshPhongMaterial {
 	return &MeshPhongMaterial{
-		Object: three.Get("MeshPhongMaterial").New(params.Object),
+		Object: three.Get("MeshPhongMaterial").New(params),
 	}
 }
