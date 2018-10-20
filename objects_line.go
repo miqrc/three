@@ -16,6 +16,7 @@ type Line struct {
 	Geometry         *BufferGeometry `js:"geometry"`
 	Material         Material        `js:"material"`
 	MatrixAutoUpdate bool            `js:"matrixAutoUpdate"`
+	RenderOrder      int             `js:"renderOrder"`
 }
 
 // NewLine creates a new material. If Material is nil, three.js will assign a randomized material to the line o_O.
