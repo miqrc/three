@@ -8,7 +8,8 @@ import "github.com/gopherjs/gopherjs/js"
 type AmbientLight struct {
 	*js.Object
 
-	Position *Vector3 `js:"position"`
+	Position         *Vector3 `js:"position"`
+	MatrixAutoUpdate bool     `js:"matrixAutoUpdate"`
 }
 
 func NewAmbientLight(color *Color, intensity float64) *AmbientLight {

@@ -9,7 +9,8 @@ type PerspectiveCameraPosition struct {
 type PerspectiveCamera struct {
 	*js.Object
 
-	Position Vector3 `js:"position"`
+	Position         Vector3 `js:"position"`
+	MatrixAutoUpdate bool    `js:"matrixAutoUpdate"`
 }
 
 func NewPerspectiveCamera(fov, aspect, near, far float64) PerspectiveCamera {
