@@ -25,7 +25,7 @@ func NewColor(color string) *Color {
 }
 
 // NewColorRGB returns a new three.Color for the given RGB values in 0..255 range.
-func NewColorRGB(r, g, b int8) *Color {
+func NewColorRGB(r, g, b uint8) *Color {
 	rgb := fmt.Sprintf("rgb(%d, %d, %d)", r, g, b)
 	return NewColor(rgb)
 }
