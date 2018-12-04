@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/divan/three"
 	"github.com/gopherjs/gopherjs/js"
-	"github.com/lngramos/three"
 )
 
 var (
@@ -23,9 +23,12 @@ func main() {
 
 	scene = three.NewScene()
 
-	light := three.NewDirectionalLight(three.NewColor(126, 255, 255), 0.5)
+	light := three.NewDirectionalLight(three.NewColor("white"), 1)
 	light.Position.Set(256, 256, 256).Normalize()
 	scene.Add(light)
+
+	ambLight := three.NewAmbientLight(three.NewColorHex(0xbbbbbb), 0.4)
+	scene.Add(ambLight)
 
 	renderer = three.NewWebGLRenderer()
 	renderer.SetPixelRatio(devicePixelRatio)
@@ -47,12 +50,12 @@ func main() {
 	// })
 
 	materialParams := three.NewMaterialParameters()
-	materialParams.Color = three.NewColor(0, 123, 211)
+	materialParams.Color = three.NewColor("blue")
 	materialParams.Shading = three.SmoothShading
 	materialParams.Side = three.FrontSide
-	material := three.NewMeshBasicMaterial(materialParams)
-	// material := three.NewMeshLambertMaterial(materialParams)
-	// material := three.NewMeshPhongMaterial(materialParams)
+	//material := three.NewMeshBasicMaterial(materialParams)
+	material := three.NewMeshLambertMaterial(materialParams)
+	//material := three.NewMeshPhongMaterial(materialParams)
 	mesh = three.NewMesh(geometry, material)
 
 	scene.Add(mesh)
