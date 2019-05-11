@@ -21,6 +21,13 @@ func (v Vector3) Set(x, y, z float64) Vector3 {
 	return v
 }
 
+func (v Vector3) Coords() (x, y, z float64) {
+	x = v.Object.Get("x").Float()
+	y = v.Object.Get("y").Float()
+	z = v.Object.Get("z").Float()
+	return
+}
+
 func (v Vector3) Normalize() Vector3 {
 	v.Call("normalize")
 	return v

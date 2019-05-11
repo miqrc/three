@@ -57,3 +57,7 @@ func (c PerspectiveCamera) UpdateProjectionMatrix() {
 func (c PerspectiveCamera) ToJSON(meta interface{}) interface{} {
 	return c.Object.Call("toJSON", meta).Interface()
 }
+
+func (c PerspectiveCamera) LookAt(x, y, z float64) {
+	c.Object.Call("lookAt", x, y, z)
+}
