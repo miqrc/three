@@ -21,6 +21,20 @@ func (v Vector3) Set(x, y, z float64) Vector3 {
 	return v
 }
 
+func (v Vector3) SetX(x float64) Vector3 {
+	v.Call("setX", x)
+	return v
+}
+
+func (v Vector3) SetY(y float64) Vector3 {
+	v.Call("setY", y)
+	return v
+}
+func (v Vector3) SetZ(z float64) Vector3 {
+	v.Call("setZ", z)
+	return v
+}
+
 func (v Vector3) Coords() (x, y, z float64) {
 	x = v.Object.Get("x").Float()
 	y = v.Object.Get("y").Float()
