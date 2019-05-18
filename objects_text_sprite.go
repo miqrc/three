@@ -17,6 +17,7 @@ type TextSprite struct {
 	Geometry         *BufferGeometry `js:"geometry"`
 	MatrixAutoUpdate bool            `js:"matrixAutoUpdate"`
 	RenderOrder      int             `js:"renderOrder"`
+	Visible          bool            `js:"visible"`
 }
 
 var _ Object3D = &TextSprite{}
@@ -38,9 +39,10 @@ type TextTextureParams struct {
 	*js.Object
 	Text       string `js:"text"`
 	FontFamily string `js:"fontFamily"`
+	Align      string `js:"align"`
 }
 
-func NewTextSprite(text string, textSize int, color *Color) *TextSprite {
+func NewTextSprite(text, align string, textSize int, color *Color) *TextSprite {
 	material := &TextSpriteMaterial{
 		Object: js.Global.Get("THREE").Get("SpriteMaterial").New(),
 	}
@@ -50,6 +52,7 @@ func NewTextSprite(text string, textSize int, color *Color) *TextSprite {
 		Object: js.Global.Get("THREE").Get("TextTexture").New(),
 	}
 	textureParams.Text = text
+	textureParams.Align = align
 
 	params := &TextSpriteParameters{
 		Object: js.Global.Get("Object").New(),

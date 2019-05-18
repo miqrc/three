@@ -15,6 +15,7 @@ type Group struct {
 	Rotation         *Euler       `js:"rotation"`
 	Children         []*js.Object `js:"children"`
 	MatrixAutoUpdate bool         `js:"matrixAutoUpdate"`
+	Visible          bool         `js:"visible"`
 }
 
 func NewGroup() *Group {
