@@ -32,6 +32,8 @@ type MaterialParameters struct {
 	Transparent bool       `js:"transparent"`
 	Opacity     float64    `js:"opacity"`
 	Map         *js.Object `js:"map"`
+	VertexColor bool       `js:"vertexColors"`
+	ToneMapped  bool       `js:"toneMapped"`
 }
 
 func NewMaterialParameters() *MaterialParameters {
